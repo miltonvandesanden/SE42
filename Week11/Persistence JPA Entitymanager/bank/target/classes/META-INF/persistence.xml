@@ -3,11 +3,12 @@
   <persistence-unit name="bankPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <shared-cache-mode>NONE</shared-cache-mode>
+    <class>bank.domain.Account</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/se42"/>
-      <property name="javax.persistence.jdbc.password" value="student"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/SE42?serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.password" value="spaghetti"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.user" value="student"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="eclipselink.ddl-generation" value="create-tables"/>
       <property name="eclipselink.logging.logger" value="DefaultLogger"/>
       <property name="eclipselink.logging.level" value="FINE"/>
