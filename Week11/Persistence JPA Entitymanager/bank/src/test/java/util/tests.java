@@ -317,6 +317,29 @@ public class tests
         em.getTransaction().commit();
         em.close();
     }
+    
+    @Test
+    public void oefen1()
+    {
+Long expected = -100L;
+Long test = 2L;
+Account account = new Account(111L);
+account.setId(expected);
+account.setBalance(test);
+em.getTransaction().begin();
+em.persist(account);
+//TODO: verklaar en pas eventueel aan
+//assertEquals(expected, account.getId();
+em.flush();
+//TODO: verklaar en pas eventueel aan
+//assertEquals(expected, account.getId();
+account.setBalance(5L);
+Account databaseding = em.find(Account.class, account.getId());
+assertEquals((Long)5L, databaseding.getBalance());
+em.getTransaction().commit();
+//TODO: verklaar en pas eventueel aan
+
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
