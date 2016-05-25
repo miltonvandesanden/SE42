@@ -1,6 +1,5 @@
 package auction.service;
 
-import auction.dao.UserDAOJPAImpl;
 import java.util.List;
 import static org.junit.Assert.*;
 
@@ -74,12 +73,5 @@ public class JPARegistrationMgrTest {
         //geen nieuwe user toegevoegd, dus gedrag hetzelfde als hiervoor
         users = registrationMgr.getUsers();
         assertEquals(2, users.size());
-    }
-    
-    @Test 
-    public void bjorntest(){
-        UserDAOJPAImpl udji = new UserDAOJPAImpl(registrationMgr.em);
-        User user = udji.findByEmail("Henkie@emailvoorbjorn.com");
-        assertNull(user);
     }
 }
