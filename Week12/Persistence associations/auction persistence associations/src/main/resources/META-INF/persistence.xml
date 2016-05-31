@@ -3,15 +3,18 @@
   <persistence-unit name="nl.fhict.se42_auction_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>auction.domain.User</class>
+    <class>auction.domain.Bid</class>
+    <class>auction.domain.Category</class>
+    <class>auction.domain.Item</class>
     <shared-cache-mode>NONE</shared-cache-mode>
     <properties>
-        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/SE42?serverTimezone=UTC"/>
-        <property name="javax.persistence.jdbc.user" value="root"/>
-        <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-        <property name="javax.persistence.jdbc.password" value="spaghetti"/>
-        <property name="javax.persistence.schema-generation.database.action" value="create"/>
-        <property name="eclipselink.logging.logger" value="DefaultLogger"/>
-        <property name="eclipselink.logging.level" value="FINE"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/SE42?serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="spaghetti"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="eclipselink.logging.logger" value="DefaultLogger"/>
+      <property name="eclipselink.logging.level" value="FINE"/>
     </properties>
   </persistence-unit>
 </persistence>

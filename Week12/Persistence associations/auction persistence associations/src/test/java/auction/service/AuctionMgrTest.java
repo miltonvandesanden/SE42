@@ -75,7 +75,8 @@ public class AuctionMgrTest {
         // eerste bod
         Category cat = new Category("cat9");
         Item item1 = sellerMgr.offerItem(seller, cat, omsch);
-        Bid new1 = auctionMgr.newBid(item1, buyer, new Money(10, "eur"));
+       
+        Bid new1 = auctionMgr.newBid(item1, buyer, new Money(10L, "eur"));
         assertEquals(emailb, new1.getBuyer().getEmail());
 
         // lager bod

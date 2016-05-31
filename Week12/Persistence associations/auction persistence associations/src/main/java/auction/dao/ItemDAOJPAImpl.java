@@ -6,12 +6,10 @@
 package auction.dao;
 
 import auction.domain.Item;
-import auction.domain.User;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
@@ -43,7 +41,6 @@ public class ItemDAOJPAImpl implements ItemDAO
             em.getTransaction().begin();
             em.getTransaction().commit();
         }
-        
     }
 
     @Override

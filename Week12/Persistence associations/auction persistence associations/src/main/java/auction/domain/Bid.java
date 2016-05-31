@@ -1,5 +1,6 @@
 package auction.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +10,7 @@ import nl.fontys.util.Money;
 
 @Entity
 @Table (name="SE42_W12_1_Bid")
-public class Bid {
+public class Bid implements Serializable{
 
     @Id
     private Long id;
@@ -24,6 +25,7 @@ public class Bid {
     {
         
     }
+    
     public Bid(User buyer, Money amount) {
         this.buyer = buyer;
         this.amount = amount;
