@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import nl.fontys.util.FontysTime;
 import nl.fontys.util.Money;
@@ -16,7 +17,7 @@ public class Bid implements Serializable{
     private Long id;
     @Column
     private FontysTime time;
-    @Column
+    @JoinColumn
     private User buyer;
     @Column
     private Money amount;

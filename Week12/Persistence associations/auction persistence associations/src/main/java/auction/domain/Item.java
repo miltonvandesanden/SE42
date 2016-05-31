@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -19,13 +20,13 @@ public class Item implements Comparable, Serializable{
 
     @Id
     private Long id;
-    @Column
+    @JoinColumn
     private User seller;
-    @Column
+    @JoinColumn
     private Category category;
     @Column
     private String description;
-    @Column(nullable = true) 
+    @JoinColumn(nullable = true) 
     private Bid highest;
 
     public Item()
