@@ -1,7 +1,0 @@
-#surefire
-#Tue May 31 19:52:43 CEST 2016
-maven.ext.class.path=C\:\\Program Files\\NetBeans 8.1\\java\\maven-nblib\\netbeans-eventspy.jar
-user.dir=C\:\\Users\\Stefan\\Documents\\GitHub\\SE42\\Week13\\Persistence bidirectional\\auction persistence associations
-file.encoding=UTF-8
-localRepository=C\:\\Users\\Stefan\\.m2\\repository
-basedir=C\:\\Users\\Stefan\\Documents\\GitHub\\SE42\\Week13\\Persistence bidirectional\\auction persistence associations

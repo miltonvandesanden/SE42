@@ -13,6 +13,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.PrivateOwned;
 
 @Entity 
@@ -25,8 +26,10 @@ public class User implements Serializable{
     @Id 
     private String email;
     
-    @JoinColumn @OneToMany (mappedBy = "seller",/* fetch = FetchType.LAZY, */cascade = {CascadeType.REMOVE })
-    /*@PrivateOwned*/
+    //verander naar @Column > loopt niet meer vast
+    @OneToMany (mappedBy = "seller"/*, fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true*/)
+    //was gecomment
+    //@CascadeOnDelete
     private Set<Item> offeredItems;
     
     public User()

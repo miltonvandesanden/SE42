@@ -14,6 +14,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import nl.fontys.util.Money;
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 
 @Entity
 @Table (name = "SE42_W12_1_Item")
@@ -25,13 +26,15 @@ public class Item implements Comparable, Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-    @JoinColumn @ManyToOne /*(cascade = CascadeType.PERSIST)*/
+    
+    @ManyToOne (cascade = { /*CascadeType.PERSIST,*/CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH } )
+    /*@CascadeOnDelete*/
     private User seller;
-    @JoinColumn @ManyToOne (cascade = CascadeType.PERSIST)
+    @ManyToOne (cascade = CascadeType.PERSIST)
     private Category category;
-    @Column
+    
     private String description;
-    @JoinColumn(nullable = true) @OneToOne (cascade = CascadeType.PERSIST)
+    @OneToOne (mappedBy = "item")
     private Bid highest;
 
     public Item()
@@ -69,7 +72,7 @@ public class Item implements Comparable, Serializable{
         if (highest != null && highest.getAmount().compareTo(amount) >= 0) {
             return null;
         }
-        highest = new Bid(buyer, amount);
+        highest = new Bid(buyer, amount, this);
         return highest;
     }
 

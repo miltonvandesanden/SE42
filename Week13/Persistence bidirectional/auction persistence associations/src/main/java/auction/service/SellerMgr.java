@@ -32,10 +32,11 @@ public class SellerMgr {
         // TODO 
         try
         {
+            
             Item item = new Item(seller, cat, description);
-            em.getTransaction().begin();
-            em.persist(item);
-            em.getTransaction().commit();
+//            em.getTransaction().begin();
+//            em.persist(item);
+//            em.getTransaction().commit();
             return item;
             
             /*Query query = em.createNamedQuery("Item.findWithUserAndCatAndDesc", Item.class);
