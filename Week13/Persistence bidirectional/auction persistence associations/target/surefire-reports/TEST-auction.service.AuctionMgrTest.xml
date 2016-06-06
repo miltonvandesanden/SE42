@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="auction.service.AuctionMgrTest" time="3.38" errors="3" skipped="0">
+<testsuite tests="3" failures="0" name="auction.service.AuctionMgrTest" time="3.167" errors="3" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
@@ -63,8 +63,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="auction.service.AuctionMgrTest" name="newBid" time="2.931">
-    <error message="java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@c2782b20." type="javax.persistence.RollbackException">javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@c2782b20.
+  <testcase classname="auction.service.AuctionMgrTest" name="newBid" time="2.762">
+    <error message="java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@4c08ffd7." type="javax.persistence.RollbackException">javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@4c08ffd7.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
 	at auction.service.AuctionMgr.newBid(AuctionMgr.java:68)
 	at auction.service.AuctionMgrTest.newBid(AuctionMgrTest.java:79)
@@ -98,7 +98,7 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@c2782b20.
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@4c08ffd7.
 	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:310)
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:723)
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1516)
@@ -107,71 +107,67 @@ Caused by: java.lang.IllegalStateException: During synchronization a new object 
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:132)
 	... 32 more
 </error>
-    <system-out>[EL Config]: metadata: 2016-06-01 11:51:11.117--ServerSession(1018298342)--Thread(Thread[main,5,main])--The access type for the persistent class [class auction.domain.Bid] is set to [FIELD].
-[EL Config]: metadata: 2016-06-01 11:51:11.18--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field item] is being defaulted to: class auction.domain.Item.
-[EL Config]: metadata: 2016-06-01 11:51:11.183--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field buyer] is being defaulted to: class auction.domain.User.
-[EL Config]: metadata: 2016-06-01 11:51:11.184--ServerSession(1018298342)--Thread(Thread[main,5,main])--The access type for the persistent class [class auction.domain.Item] is set to [FIELD].
-[EL Config]: metadata: 2016-06-01 11:51:11.185--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field seller] is being defaulted to: class auction.domain.User.
-[EL Config]: metadata: 2016-06-01 11:51:11.185--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field highest] is being defaulted to: class auction.domain.Bid.
-[EL Config]: metadata: 2016-06-01 11:51:11.189--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field category] is being defaulted to: class auction.domain.Category.
-[EL Config]: metadata: 2016-06-01 11:51:11.19--ServerSession(1018298342)--Thread(Thread[main,5,main])--The access type for the persistent class [class auction.domain.User] is set to [FIELD].
-[EL Config]: metadata: 2016-06-01 11:51:11.201--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field offeredItems] is being defaulted to: class auction.domain.Item.
-[EL Config]: metadata: 2016-06-01 11:51:11.205--ServerSession(1018298342)--Thread(Thread[main,5,main])--The access type for the persistent class [class auction.domain.Category] is set to [FIELD].
-[EL Config]: metadata: 2016-06-01 11:51:11.206--ServerSession(1018298342)--Thread(Thread[main,5,main])--The alias name for the entity class [class auction.domain.Bid] is being defaulted to: Bid.
-[EL Config]: metadata: 2016-06-01 11:51:11.245--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [amount] is being defaulted to: AMOUNT.
-[EL Config]: metadata: 2016-06-01 11:51:11.25--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2016-06-01 11:51:11.251--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [time] is being defaulted to: TIME.
-[EL Config]: metadata: 2016-06-01 11:51:11.256--ServerSession(1018298342)--Thread(Thread[main,5,main])--The alias name for the entity class [class auction.domain.Item] is being defaulted to: Item.
-[EL Config]: metadata: 2016-06-01 11:51:11.259--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
-[EL Config]: metadata: 2016-06-01 11:51:11.262--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2016-06-01 11:51:11.264--ServerSession(1018298342)--Thread(Thread[main,5,main])--The alias name for the entity class [class auction.domain.User] is being defaulted to: User.
-[EL Config]: metadata: 2016-06-01 11:51:11.266--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
-[EL Config]: metadata: 2016-06-01 11:51:11.268--ServerSession(1018298342)--Thread(Thread[main,5,main])--The alias name for the entity class [class auction.domain.Category] is being defaulted to: Category.
-[EL Config]: metadata: 2016-06-01 11:51:11.275--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
-[EL Config]: metadata: 2016-06-01 11:51:11.277--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2016-06-01 11:51:11.299--ServerSession(1018298342)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field item] is being defaulted to: ID.
-[EL Config]: metadata: 2016-06-01 11:51:11.3--ServerSession(1018298342)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [item] is being defaulted to: ITEM_ID.
-[EL Config]: metadata: 2016-06-01 11:51:11.3--ServerSession(1018298342)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field buyer] is being defaulted to: EMAIL.
-[EL Config]: metadata: 2016-06-01 11:51:11.301--ServerSession(1018298342)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [buyer] is being defaulted to: BUYER_EMAIL.
-[EL Config]: metadata: 2016-06-01 11:51:11.302--ServerSession(1018298342)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field seller] is being defaulted to: EMAIL.
-[EL Config]: metadata: 2016-06-01 11:51:11.302--ServerSession(1018298342)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [seller] is being defaulted to: SELLER_EMAIL.
-[EL Config]: metadata: 2016-06-01 11:51:11.303--ServerSession(1018298342)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field category] is being defaulted to: ID.
-[EL Config]: metadata: 2016-06-01 11:51:11.304--ServerSession(1018298342)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [category] is being defaulted to: CATEGORY_ID.
-[EL Info]: 2016-06-01 11:51:12.236--ServerSession(1018298342)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
-[EL Fine]: connection: 2016-06-01 11:51:12.391--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.MySQLPlatform
-[EL Config]: connection: 2016-06-01 11:51:12.403--ServerSession(1018298342)--Connection(2051397396)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+    <system-out>[EL Config]: metadata: 2016-06-01 15:00:23.278--ServerSession(1018298342)--Thread(Thread[main,5,main])--The access type for the persistent class [class auction.domain.Bid] is set to [FIELD].
+[EL Config]: metadata: 2016-06-01 15:00:23.312--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field item] is being defaulted to: class auction.domain.Item.
+[EL Config]: metadata: 2016-06-01 15:00:23.316--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field buyer] is being defaulted to: class auction.domain.User.
+[EL Config]: metadata: 2016-06-01 15:00:23.317--ServerSession(1018298342)--Thread(Thread[main,5,main])--The access type for the persistent class [class auction.domain.Item] is set to [FIELD].
+[EL Config]: metadata: 2016-06-01 15:00:23.317--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field seller] is being defaulted to: class auction.domain.User.
+[EL Config]: metadata: 2016-06-01 15:00:23.318--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field highest] is being defaulted to: class auction.domain.Bid.
+[EL Config]: metadata: 2016-06-01 15:00:23.319--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field category] is being defaulted to: class auction.domain.Category.
+[EL Config]: metadata: 2016-06-01 15:00:23.32--ServerSession(1018298342)--Thread(Thread[main,5,main])--The access type for the persistent class [class auction.domain.User] is set to [FIELD].
+[EL Config]: metadata: 2016-06-01 15:00:23.324--ServerSession(1018298342)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field offeredItems] is being defaulted to: class auction.domain.Item.
+[EL Config]: metadata: 2016-06-01 15:00:23.325--ServerSession(1018298342)--Thread(Thread[main,5,main])--The access type for the persistent class [class auction.domain.Category] is set to [FIELD].
+[EL Config]: metadata: 2016-06-01 15:00:23.325--ServerSession(1018298342)--Thread(Thread[main,5,main])--The alias name for the entity class [class auction.domain.Bid] is being defaulted to: Bid.
+[EL Config]: metadata: 2016-06-01 15:00:23.351--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [amount] is being defaulted to: AMOUNT.
+[EL Config]: metadata: 2016-06-01 15:00:23.358--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2016-06-01 15:00:23.359--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [time] is being defaulted to: TIME.
+[EL Config]: metadata: 2016-06-01 15:00:23.359--ServerSession(1018298342)--Thread(Thread[main,5,main])--The alias name for the entity class [class auction.domain.Item] is being defaulted to: Item.
+[EL Config]: metadata: 2016-06-01 15:00:23.361--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+[EL Config]: metadata: 2016-06-01 15:00:23.361--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2016-06-01 15:00:23.361--ServerSession(1018298342)--Thread(Thread[main,5,main])--The alias name for the entity class [class auction.domain.User] is being defaulted to: User.
+[EL Config]: metadata: 2016-06-01 15:00:23.362--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2016-06-01 15:00:23.363--ServerSession(1018298342)--Thread(Thread[main,5,main])--The alias name for the entity class [class auction.domain.Category] is being defaulted to: Category.
+[EL Config]: metadata: 2016-06-01 15:00:23.363--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+[EL Config]: metadata: 2016-06-01 15:00:23.363--ServerSession(1018298342)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2016-06-01 15:00:23.383--ServerSession(1018298342)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field item] is being defaulted to: ID.
+[EL Config]: metadata: 2016-06-01 15:00:23.383--ServerSession(1018298342)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [item] is being defaulted to: ITEM_ID.
+[EL Config]: metadata: 2016-06-01 15:00:23.384--ServerSession(1018298342)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field buyer] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2016-06-01 15:00:23.384--ServerSession(1018298342)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [buyer] is being defaulted to: BUYER_EMAIL.
+[EL Config]: metadata: 2016-06-01 15:00:23.384--ServerSession(1018298342)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field seller] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2016-06-01 15:00:23.385--ServerSession(1018298342)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [seller] is being defaulted to: SELLER_EMAIL.
+[EL Config]: metadata: 2016-06-01 15:00:23.385--ServerSession(1018298342)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field category] is being defaulted to: ID.
+[EL Config]: metadata: 2016-06-01 15:00:23.385--ServerSession(1018298342)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [category] is being defaulted to: CATEGORY_ID.
+[EL Info]: 2016-06-01 15:00:24.399--ServerSession(1018298342)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
+[EL Fine]: connection: 2016-06-01 15:00:24.754--Thread(Thread[main,5,main])--Detected database platform: org.eclipse.persistence.platform.database.MySQLPlatform
+[EL Config]: connection: 2016-06-01 15:00:24.772--ServerSession(1018298342)--Connection(2051397396)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
 	platform=&gt;MySQLPlatform
 	user name=&gt; &quot;root&quot;
 	datasource URL=&gt; &quot;jdbc:mysql://localhost:3306/SE42?serverTimezone=UTC&quot;
 ))
-[EL Config]: connection: 2016-06-01 11:51:12.413--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--Connected: jdbc:mysql://localhost:3306/SE42?serverTimezone=UTC
+[EL Config]: connection: 2016-06-01 15:00:24.782--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--Connected: jdbc:mysql://localhost:3306/SE42?serverTimezone=UTC
 	User: root@localhost
 	Database: MySQL  Version: 5.7.11-log
 	Driver: MySQL Connector Java  Version: mysql-connector-java-6.0.2 ( Revision: c6da0fe501ad43d4ed6483b60ea796dc9fbe2d7b )
-[EL Info]: connection: 2016-06-01 11:51:12.627--ServerSession(1018298342)--Thread(Thread[main,5,main])--file:/C:/Users/Stefan/Documents/GitHub/SE42/Week13/Persistence bidirectional/auction persistence associations/target/classes/_nl.fhict.se42_auction_jar_1.0-SNAPSHOTPU login successful
-[EL Fine]: sql: 2016-06-01 11:51:12.664--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = SEQ_GEN
-[EL Fine]: sql: 2016-06-01 11:51:12.749--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+[EL Info]: connection: 2016-06-01 15:00:25.092--ServerSession(1018298342)--Thread(Thread[main,5,main])--file:/C:/Users/Stefan/Documents/GitHub/SE42/Week13/Persistence bidirectional/auction persistence associations/target/classes/_nl.fhict.se42_auction_jar_1.0-SNAPSHOTPU login successful
+[EL Fine]: sql: 2016-06-01 15:00:25.149--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = SEQ_GEN
+[EL Fine]: sql: 2016-06-01 15:00:25.284--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [ss2@nl]
-[EL Fine]: sql: 2016-06-01 11:51:12.762--ClientSession(313881452)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
+[EL Fine]: sql: 2016-06-01 15:00:25.292--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+	bind =&gt; [bb@nl]
+[EL Fine]: sql: 2016-06-01 15:00:25.294--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+	bind =&gt; [bb2@nl]
+[EL Fine]: sql: 2016-06-01 15:00:25.3--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT ID, DESCRIPTION, CATEGORY_ID, SELLER_EMAIL FROM SE42_W12_1_Item WHERE (SELLER_EMAIL = ?)
 	bind =&gt; [ss2@nl]
-[EL Fine]: sql: 2016-06-01 11:51:12.835--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+[EL Fine]: sql: 2016-06-01 15:00:25.314--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [bb@nl]
-[EL Fine]: sql: 2016-06-01 11:51:12.839--ClientSession(313881452)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
-	bind =&gt; [bb@nl]
-[EL Fine]: sql: 2016-06-01 11:51:13.21--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
-	bind =&gt; [bb2@nl]
-[EL Fine]: sql: 2016-06-01 11:51:13.212--ClientSession(313881452)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
-	bind =&gt; [bb2@nl]
-[EL Fine]: sql: 2016-06-01 11:51:13.474--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
-	bind =&gt; [bb@nl]
-[EL Warning]: 2016-06-01 11:51:13.481--UnitOfWork(1742885458)--Thread(Thread[main,5,main])--java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@c2782b20.
+[EL Warning]: 2016-06-01 15:00:25.321--UnitOfWork(1974918491)--Thread(Thread[main,5,main])--java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@4c08ffd7.
 </system-out>
     <system-err>Loading class `com.mysql.jdbc.Driver&apos;. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver&apos;. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
-Wed Jun 01 11:51:12 CEST 2016 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-Wed Jun 01 11:51:12 CEST 2016 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Wed Jun 01 15:00:24 CEST 2016 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Wed Jun 01 15:00:24 CEST 2016 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
 </system-err>
   </testcase>
-  <testcase classname="auction.service.AuctionMgrTest" name="getItem" time="0.156">
+  <testcase classname="auction.service.AuctionMgrTest" name="getItem" time="0.139">
     <error message="An instance of a null PK has been incorrectly provided for this find operation." type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: An instance of a null PK has been incorrectly provided for this find operation.
 	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.findInternal(EntityManagerImpl.java:775)
 	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.find(EntityManagerImpl.java:719)
@@ -209,13 +205,13 @@ Wed Jun 01 11:51:12 CEST 2016 WARN: Establishing SSL connection without server&a
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-out>[EL Fine]: sql: 2016-06-01 11:51:13.501--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+    <system-out>[EL Fine]: sql: 2016-06-01 15:00:25.356--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [xx2@nl]
-[EL Fine]: sql: 2016-06-01 11:51:13.503--ClientSession(1925044167)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
+[EL Fine]: sql: 2016-06-01 15:00:25.363--ClientSession(1692317071)--Connection(793485742)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
 	bind =&gt; [xx2@nl]
 </system-out>
   </testcase>
-  <testcase classname="auction.service.AuctionMgrTest" name="findItemByDescription" time="0.197">
+  <testcase classname="auction.service.AuctionMgrTest" name="findItemByDescription" time="0.143">
     <error message="java.util.Vector cannot be cast to java.util.ArrayList" type="java.lang.ClassCastException">java.lang.ClassCastException: java.util.Vector cannot be cast to java.util.ArrayList
 	at auction.service.AuctionMgrTest.findItemByDescription(AuctionMgrTest.java:56)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -249,15 +245,15 @@ Wed Jun 01 11:51:12 CEST 2016 WARN: Establishing SSL connection without server&a
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-out>[EL Fine]: sql: 2016-06-01 11:51:13.665--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+    <system-out>[EL Fine]: sql: 2016-06-01 15:00:25.498--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [xx3@nl]
-[EL Fine]: sql: 2016-06-01 11:51:13.667--ClientSession(1729045606)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
+[EL Fine]: sql: 2016-06-01 15:00:25.5--ClientSession(1816633311)--Connection(793485742)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
 	bind =&gt; [xx3@nl]
-[EL Fine]: sql: 2016-06-01 11:51:13.756--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+[EL Fine]: sql: 2016-06-01 15:00:25.57--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [xx4@nl]
-[EL Fine]: sql: 2016-06-01 11:51:13.758--ClientSession(1729045606)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
+[EL Fine]: sql: 2016-06-01 15:00:25.573--ClientSession(1816633311)--Connection(793485742)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
 	bind =&gt; [xx4@nl]
-[EL Fine]: sql: 2016-06-01 11:51:13.844--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT ID, DESCRIPTION, CATEGORY_ID, SELLER_EMAIL FROM SE42_W12_1_Item WHERE (DESCRIPTION = ?)
+[EL Fine]: sql: 2016-06-01 15:00:25.614--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT ID, DESCRIPTION, CATEGORY_ID, SELLER_EMAIL FROM SE42_W12_1_Item WHERE (DESCRIPTION = ?)
 	bind =&gt; [omsch2]
 </system-out>
   </testcase>

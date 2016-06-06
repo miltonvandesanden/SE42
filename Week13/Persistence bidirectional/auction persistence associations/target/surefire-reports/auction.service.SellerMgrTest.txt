@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: auction.service.SellerMgrTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.176 sec <<< FAILURE!
-testOfferItem(auction.service.SellerMgrTest)  Time elapsed: 0.04 sec  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.112 sec <<< FAILURE!
+testOfferItem(auction.service.SellerMgrTest)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -39,8 +39,8 @@ java.lang.AssertionError
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-testRevokeItem(auction.service.SellerMgrTest)  Time elapsed: 0.135 sec  <<< ERROR!
-java.lang.IllegalArgumentException: Entity must be managed to call remove: auction.domain.User@6af90849, try merging the detached and try the remove again.
+testRevokeItem(auction.service.SellerMgrTest)  Time elapsed: 0.109 sec  <<< ERROR!
+java.lang.IllegalArgumentException: Entity must be managed to call remove: auction.domain.User@726934e2, try merging the detached and try the remove again.
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.performRemove(UnitOfWorkImpl.java:3578)
 	at org.eclipse.persistence.mappings.ObjectReferenceMapping.cascadePerformRemoveIfRequired(ObjectReferenceMapping.java:886)
 	at org.eclipse.persistence.mappings.ObjectReferenceMapping.cascadePerformRemoveIfRequired(ObjectReferenceMapping.java:859)

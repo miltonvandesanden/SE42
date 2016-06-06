@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: auction.service.AuctionMgrTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 3.379 sec <<< FAILURE!
-newBid(auction.service.AuctionMgrTest)  Time elapsed: 2.931 sec  <<< ERROR!
-javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@c2782b20.
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 3.128 sec <<< FAILURE!
+newBid(auction.service.AuctionMgrTest)  Time elapsed: 2.762 sec  <<< ERROR!
+javax.persistence.RollbackException: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@4c08ffd7.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
 	at auction.service.AuctionMgr.newBid(AuctionMgr.java:68)
 	at auction.service.AuctionMgrTest.newBid(AuctionMgrTest.java:79)
@@ -37,7 +37,7 @@ javax.persistence.RollbackException: java.lang.IllegalStateException: During syn
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@c2782b20.
+Caused by: java.lang.IllegalStateException: During synchronization a new object was found through a relationship that was not marked cascade PERSIST: auction.domain.Item@4c08ffd7.
 	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.discoverUnregisteredNewObjects(RepeatableWriteUnitOfWork.java:310)
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.calculateChanges(UnitOfWorkImpl.java:723)
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithChangeSet(UnitOfWorkImpl.java:1516)
@@ -45,7 +45,7 @@ Caused by: java.lang.IllegalStateException: During synchronization a new object 
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitAndResume(UnitOfWorkImpl.java:1169)
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:132)
 	... 32 more
-getItem(auction.service.AuctionMgrTest)  Time elapsed: 0.156 sec  <<< ERROR!
+getItem(auction.service.AuctionMgrTest)  Time elapsed: 0.139 sec  <<< ERROR!
 java.lang.IllegalArgumentException: An instance of a null PK has been incorrectly provided for this find operation.
 	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.findInternal(EntityManagerImpl.java:775)
 	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.find(EntityManagerImpl.java:719)
@@ -82,7 +82,7 @@ java.lang.IllegalArgumentException: An instance of a null PK has been incorrectl
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-findItemByDescription(auction.service.AuctionMgrTest)  Time elapsed: 0.197 sec  <<< ERROR!
+findItemByDescription(auction.service.AuctionMgrTest)  Time elapsed: 0.143 sec  <<< ERROR!
 java.lang.ClassCastException: java.util.Vector cannot be cast to java.util.ArrayList
 	at auction.service.AuctionMgrTest.findItemByDescription(AuctionMgrTest.java:56)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

@@ -1,5 +1,6 @@
 package auction.service;
 
+import auction.dao.ItemDAO;
 import auction.dao.UserDAO;
 import auction.dao.UserDAOJPAImpl;
 import auction.domain.Category;
@@ -34,9 +35,8 @@ public class SellerMgr {
         {
             
             Item item = new Item(seller, cat, description);
-//            em.getTransaction().begin();
-//            em.persist(item);
-//            em.getTransaction().commit();
+          // ItemDAO itemDAO = new ItemDAO(em);
+         //  itemDAO.create(item);
             return item;
             
             /*Query query = em.createNamedQuery("Item.findWithUserAndCatAndDesc", Item.class);

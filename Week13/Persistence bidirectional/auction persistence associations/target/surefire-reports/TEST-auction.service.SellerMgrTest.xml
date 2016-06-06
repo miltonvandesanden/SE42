@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="1" name="auction.service.SellerMgrTest" time="0.186" errors="1" skipped="0">
+<testsuite tests="2" failures="1" name="auction.service.SellerMgrTest" time="0.124" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
@@ -63,7 +63,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="auction.service.SellerMgrTest" name="testOfferItem" time="0.04">
+  <testcase classname="auction.service.SellerMgrTest" name="testOfferItem" time="0.002">
     <failure type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -101,14 +101,14 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </failure>
-    <system-out>[EL Fine]: sql: 2016-06-01 11:51:14.388--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+    <system-out>[EL Fine]: sql: 2016-06-01 15:00:26.072--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [xx@nl]
-[EL Fine]: sql: 2016-06-01 11:51:14.389--ClientSession(783117220)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
+[EL Fine]: sql: 2016-06-01 15:00:26.074--ClientSession(10523395)--Connection(793485742)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
 	bind =&gt; [xx@nl]
 </system-out>
   </testcase>
-  <testcase classname="auction.service.SellerMgrTest" name="testRevokeItem" time="0.135">
-    <error message="Entity must be managed to call remove: auction.domain.User@6af90849, try merging the detached and try the remove again." type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Entity must be managed to call remove: auction.domain.User@6af90849, try merging the detached and try the remove again.
+  <testcase classname="auction.service.SellerMgrTest" name="testRevokeItem" time="0.11">
+    <error message="Entity must be managed to call remove: auction.domain.User@726934e2, try merging the detached and try the remove again." type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Entity must be managed to call remove: auction.domain.User@726934e2, try merging the detached and try the remove again.
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.performRemove(UnitOfWorkImpl.java:3578)
 	at org.eclipse.persistence.mappings.ObjectReferenceMapping.cascadePerformRemoveIfRequired(ObjectReferenceMapping.java:886)
 	at org.eclipse.persistence.mappings.ObjectReferenceMapping.cascadePerformRemoveIfRequired(ObjectReferenceMapping.java:859)
@@ -148,15 +148,15 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-out>[EL Fine]: sql: 2016-06-01 11:51:14.451--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+    <system-out>[EL Fine]: sql: 2016-06-01 15:00:26.135--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [sel@nl]
-[EL Fine]: sql: 2016-06-01 11:51:14.453--ClientSession(1336210565)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
+[EL Fine]: sql: 2016-06-01 15:00:26.138--ClientSession(237503491)--Connection(793485742)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
 	bind =&gt; [sel@nl]
-[EL Fine]: sql: 2016-06-01 11:51:14.523--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+[EL Fine]: sql: 2016-06-01 15:00:26.182--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [buy@nl]
-[EL Fine]: sql: 2016-06-01 11:51:14.524--ClientSession(1336210565)--Connection(328314683)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
+[EL Fine]: sql: 2016-06-01 15:00:26.183--ClientSession(237503491)--Connection(793485742)--Thread(Thread[main,5,main])--INSERT INTO SE42_W12_1_User (EMAIL) VALUES (?)
 	bind =&gt; [buy@nl]
-[EL Fine]: sql: 2016-06-01 11:51:14.568--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
+[EL Fine]: sql: 2016-06-01 15:00:26.238--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User WHERE (EMAIL = ?)
 	bind =&gt; [sel@nl]
 </system-out>
   </testcase>

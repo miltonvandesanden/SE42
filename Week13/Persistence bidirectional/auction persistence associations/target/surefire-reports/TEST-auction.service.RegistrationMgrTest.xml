@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="1" name="auction.service.RegistrationMgrTest" time="0.023" errors="0" skipped="0">
+<testsuite tests="3" failures="1" name="auction.service.RegistrationMgrTest" time="0.015" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_73\jre\bin"/>
@@ -65,7 +65,7 @@
   </properties>
   <testcase classname="auction.service.RegistrationMgrTest" name="registerUser" time="0"/>
   <testcase classname="auction.service.RegistrationMgrTest" name="getUser" time="0"/>
-  <testcase classname="auction.service.RegistrationMgrTest" name="getUsers" time="0.007">
+  <testcase classname="auction.service.RegistrationMgrTest" name="getUsers" time="0">
     <failure message="expected:&lt;0&gt; but was:&lt;10&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;0&gt; but was:&lt;10&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:743)
@@ -104,7 +104,7 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </failure>
-    <system-out>[EL Fine]: sql: 2016-06-01 11:51:14.364--ServerSession(1018298342)--Connection(328314683)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User
+    <system-out>[EL Fine]: sql: 2016-06-01 15:00:26.042--ServerSession(1018298342)--Connection(793485742)--Thread(Thread[main,5,main])--SELECT EMAIL FROM SE42_W12_1_User
 </system-out>
   </testcase>
 </testsuite>

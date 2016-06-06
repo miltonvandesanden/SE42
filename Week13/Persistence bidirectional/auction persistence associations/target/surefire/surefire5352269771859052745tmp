@@ -1,0 +1,12 @@
+#surefire
+#Wed Jun 01 15:19:21 CEST 2016
+jpda.address=9178
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.1\\java\\maven-nblib\\netbeans-eventspy.jar
+file.encoding=UTF-8
+jpda.listen=true
+forkMode=once
+user.dir=C\:\\Users\\Stefan\\Documents\\GitHub\\SE42\\Week13\\Persistence bidirectional\\auction persistence associations
+localRepository=C\:\\Users\\Stefan\\.m2\\repository
+test=auction.service.ItemsFromSellerTest
+basedir=C\:\\Users\\Stefan\\Documents\\GitHub\\SE42\\Week13\\Persistence bidirectional\\auction persistence associations
+maven.surefire.debug=-Xdebug -Xrunjdwp\:transport\=dt_socket,server\=n,address\=9178

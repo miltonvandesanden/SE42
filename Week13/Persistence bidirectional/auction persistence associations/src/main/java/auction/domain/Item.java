@@ -34,7 +34,7 @@ public class Item implements Comparable, Serializable{
     private Category category;
     
     private String description;
-    @OneToOne (mappedBy = "item")
+    @OneToOne (mappedBy = "item")  
     private Bid highest;
 
     public Item()
