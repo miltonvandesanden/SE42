@@ -24,9 +24,9 @@ public class RegistrationClient
             auction.web.RegistrationService service = new auction.web.RegistrationService();
             auction.web.Registration port = service.getRegistrationPort();
             // TODO initialize WS operation arguments here
-            //java.lang.String arg0 = "";
+            java.lang.String arg0 = email;
             // TODO process result here
-            return port.registerUser(email);
+            return port.registerUser(arg0);
             //System.out.println("Result = "+result);
         }
         catch (Exception ex)
@@ -44,9 +44,9 @@ public class RegistrationClient
             auction.web.RegistrationService service = new auction.web.RegistrationService();
             auction.web.Registration port = service.getRegistrationPort();
             // TODO initialize WS operation arguments here
-            //java.lang.String arg0 = "";
+            java.lang.String arg0 = description;
             // TODO process result here
-            return port.createCategory(description);
+            return port.createCategory(arg0);
             //System.out.println("Result = "+result);
         }
         catch (Exception ex)
@@ -64,9 +64,9 @@ public class RegistrationClient
             auction.web.RegistrationService service = new auction.web.RegistrationService();
             auction.web.Registration port = service.getRegistrationPort();
             // TODO initialize WS operation arguments here
-            //java.lang.String arg0 = "";
+            java.lang.String arg0 = email;
             // TODO process result here
-            return port.getUser(email);
+            return port.getUser(arg0);
             //System.out.println("Result = "+result);
         }
         catch (Exception ex)

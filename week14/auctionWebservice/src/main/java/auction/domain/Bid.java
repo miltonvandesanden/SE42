@@ -23,20 +23,15 @@ import nl.fontys.util.Money;
 public class Bid implements Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    @XmlAttribute
     private Long id;
     
-    @XmlAttribute
     private FontysTime time;
     @ManyToOne
-    @XmlAttribute
     private User buyer;
    
-    @XmlAttribute
     private Money amount;
     //persisten en test schrijven
     @OneToOne @JoinColumn (nullable = false) 
-    @XmlAttribute
     private Item item;
     
     public Bid()

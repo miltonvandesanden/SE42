@@ -29,20 +29,15 @@ import org.eclipse.persistence.annotations.CascadeOnDelete;
 public class Item implements Comparable, Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    @XmlAttribute
     private Long id;
     
     @ManyToOne (cascade = { /*CascadeType.PERSIST,*/CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH } )
     /*@CascadeOnDelete*/
-    @XmlAttribute
     private User seller;
     @ManyToOne /*(cascade = CascadeType.PERSIST)*/
-    @XmlAttribute
     private Category category;
-    @XmlAttribute
     private String description;
     @OneToOne (mappedBy = "item", cascade = CascadeType.PERSIST) 
-    @XmlAttribute
     private Bid highest;
 
     public Item()

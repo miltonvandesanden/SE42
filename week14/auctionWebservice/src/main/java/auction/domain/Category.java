@@ -17,10 +17,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Category implements Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    @XmlAttribute
     private Long id;
     @Column
-    @XmlAttribute
     private String description = "undefined";
     
     private Category() 

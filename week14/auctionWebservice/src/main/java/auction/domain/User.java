@@ -28,14 +28,12 @@ import org.eclipse.persistence.annotations.PrivateOwned;
 @XmlRootElement
 public class User implements Serializable{
     @Id 
-    @XmlAttribute
     private String email;
     
     //verander naar @Column > loopt niet meer vast
     @OneToMany (mappedBy = "seller"/*, fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true*/)
     //was gecomment
     //@CascadeOnDelete
-    @XmlAttribute
     private Set<Item> offeredItems;
     
     public User()

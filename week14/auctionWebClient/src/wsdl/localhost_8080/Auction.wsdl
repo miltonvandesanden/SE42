@@ -16,12 +16,6 @@
 <message name="findItemByDescriptionResponse">
 <part name="parameters" element="tns:findItemByDescriptionResponse"></part>
 </message>
-<message name="offerItem">
-<part name="parameters" element="tns:offerItem"></part>
-</message>
-<message name="offerItemResponse">
-<part name="parameters" element="tns:offerItemResponse"></part>
-</message>
 <message name="revokeItem">
 <part name="parameters" element="tns:revokeItem"></part>
 </message>
@@ -34,6 +28,12 @@
 <message name="newBidResponse">
 <part name="parameters" element="tns:newBidResponse"></part>
 </message>
+<message name="offerItem">
+<part name="parameters" element="tns:offerItem"></part>
+</message>
+<message name="offerItemResponse">
+<part name="parameters" element="tns:offerItemResponse"></part>
+</message>
 <portType name="Auction">
 <operation name="getItem">
 <input wsam:Action="http://web.auction/Auction/getItemRequest" message="tns:getItem"></input>
@@ -43,10 +43,6 @@
 <input wsam:Action="http://web.auction/Auction/findItemByDescriptionRequest" message="tns:findItemByDescription"></input>
 <output wsam:Action="http://web.auction/Auction/findItemByDescriptionResponse" message="tns:findItemByDescriptionResponse"></output>
 </operation>
-<operation name="offerItem">
-<input wsam:Action="http://web.auction/Auction/offerItemRequest" message="tns:offerItem"></input>
-<output wsam:Action="http://web.auction/Auction/offerItemResponse" message="tns:offerItemResponse"></output>
-</operation>
 <operation name="revokeItem">
 <input wsam:Action="http://web.auction/Auction/revokeItemRequest" message="tns:revokeItem"></input>
 <output wsam:Action="http://web.auction/Auction/revokeItemResponse" message="tns:revokeItemResponse"></output>
@@ -54,6 +50,10 @@
 <operation name="newBid">
 <input wsam:Action="http://web.auction/Auction/newBidRequest" message="tns:newBid"></input>
 <output wsam:Action="http://web.auction/Auction/newBidResponse" message="tns:newBidResponse"></output>
+</operation>
+<operation name="offerItem">
+<input wsam:Action="http://web.auction/Auction/offerItemRequest" message="tns:offerItem"></input>
+<output wsam:Action="http://web.auction/Auction/offerItemResponse" message="tns:offerItemResponse"></output>
 </operation>
 </portType>
 <binding name="AuctionPortBinding" type="tns:Auction">
@@ -76,15 +76,6 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="offerItem">
-<soap:operation soapAction=""></soap:operation>
-<input>
-<soap:body use="literal"></soap:body>
-</input>
-<output>
-<soap:body use="literal"></soap:body>
-</output>
-</operation>
 <operation name="revokeItem">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -95,6 +86,15 @@
 </output>
 </operation>
 <operation name="newBid">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
+<operation name="offerItem">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

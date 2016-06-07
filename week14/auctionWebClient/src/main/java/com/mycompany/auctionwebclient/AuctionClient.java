@@ -28,9 +28,9 @@ public class AuctionClient
             auction.web.AuctionService service = new auction.web.AuctionService();
             auction.web.Auction port = service.getAuctionPort();
             // TODO initialize WS operation arguments here
-            //java.lang.Long arg0 = Long.valueOf(0L);
+            java.lang.Long arg0 = id;
             // TODO process result here
-            return port.getItem(id);
+            return port.getItem(arg0);
             //System.out.println("Result = "+result);
         }
         catch (Exception ex)
@@ -48,9 +48,9 @@ public class AuctionClient
             auction.web.AuctionService service = new auction.web.AuctionService();
             auction.web.Auction port = service.getAuctionPort();
             // TODO initialize WS operation arguments here
-            //java.lang.String arg0 = "";
+            java.lang.String arg0 = description;
             // TODO process result here
-            return port.findItemByDescription(description);
+            return port.findItemByDescription(arg0);
             //System.out.println("Result = "+result);
         }
         catch (Exception ex)
@@ -68,9 +68,9 @@ public class AuctionClient
             auction.web.AuctionService service = new auction.web.AuctionService();
             auction.web.Auction port = service.getAuctionPort();
             // TODO initialize WS operation arguments here
-            //auction.web.Item arg0 = new auction.web.Item();
+            auction.web.Item arg0 = item;
             // TODO process result here
-            return port.revokeItem(item);
+            return port.revokeItem(arg0);
             //System.out.println("Result = "+result);
         }
         catch (Exception ex)
@@ -88,11 +88,11 @@ public class AuctionClient
             auction.web.AuctionService service = new auction.web.AuctionService();
             auction.web.Auction port = service.getAuctionPort();
             // TODO initialize WS operation arguments here
-//            auction.web.Item arg0 = new auction.web.Item();
-//            auction.web.User arg1 = new auction.web.User();
-//            auction.web.Money arg2 = new auction.web.Money();
+            auction.web.Item arg0 = item;
+            auction.web.User arg1 = user;
+            auction.web.Money arg2 = money;
             // TODO process result here
-            return port.newBid(item, user, money);
+            return port.newBid(arg0, arg1, arg2);
 //            System.out.println("Result = "+result);
         }
         catch (Exception ex)
@@ -110,11 +110,11 @@ public class AuctionClient
             auction.web.AuctionService service = new auction.web.AuctionService();
             auction.web.Auction port = service.getAuctionPort();
             // TODO initialize WS operation arguments here
-//            auction.web.User arg0 = new auction.web.User();
-//            auction.web.Category arg1 = new auction.web.Category();
-//            java.lang.String arg2 = "";
+            auction.web.User arg0 = user;
+            auction.web.Category arg1 = category;
+            java.lang.String arg2 = description;
             // TODO process result here
-            return port.offerItem(user, category, description);
+            return port.offerItem(arg0, arg1, arg2);
 //            System.out.println("Result = "+result);
         }
         catch (Exception ex)
