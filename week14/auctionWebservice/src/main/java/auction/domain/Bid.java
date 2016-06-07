@@ -11,11 +11,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 import nl.fontys.util.FontysTime;
 import nl.fontys.util.Money;
 
 @Entity
 @Table (name="SE42_W12_1_Bid")
+@XmlRootElement
 public class Bid implements Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)

@@ -6,9 +6,11 @@ import auction.domain.Item;
 import auction.domain.User;
 import java.util.ArrayList;
 import java.util.List;
+import javax.jws.WebMethod;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+
 
 public class AuctionMgr  {
 
@@ -18,6 +20,7 @@ public class AuctionMgr  {
      * @return het item met deze id; als dit item niet bekend is wordt er null
      *         geretourneerd
      */
+    @WebMethod
     public Item getItem(Long id) {
         return em.find(Item.class, id);
     }
@@ -27,6 +30,7 @@ public class AuctionMgr  {
      * @param description
      * @return een lijst met items met @desciption. Eventueel lege lijst.
      */
+    @WebMethod
     public List<Item> findItemByDescription(String description) {
         // TODO
         Query q = em.createNamedQuery("Item.findByDescription", Item.class).setParameter("description", description);
@@ -47,6 +51,7 @@ public class AuctionMgr  {
      * @return het nieuwe bod ter hoogte van amount op item door buyer, tenzij
      *         amount niet hoger was dan het laatste bod, dan null
      */
+    @WebMethod
     public Bid newBid(Item item, User buyer, Money amount) {
         // TODO 
         Bid result = null;

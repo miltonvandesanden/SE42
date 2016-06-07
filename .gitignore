@@ -58,3 +58,7 @@ Temporary Items
 /week14/CalculatorWSServletClient/dist/
 /week14/auction persistence associations/target/
 /week14/auctionWebservice/target/
+/week14/auctionWebClient/target/
+/week14/auctionWebClient/nbproject/
+/week14/SoapCalculatorTest/target/
+/week14/SoapCalculatorTestClient/target/

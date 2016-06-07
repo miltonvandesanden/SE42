@@ -13,6 +13,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 import org.eclipse.persistence.annotations.PrivateOwned;
 
@@ -22,6 +23,7 @@ import org.eclipse.persistence.annotations.PrivateOwned;
     @NamedQuery(name = "User.count", query = "select count(a) from User as a"),
     @NamedQuery(name = "User.findByEmail", query = "select a from User as a where a.email = :email")
 })
+@XmlRootElement
 public class User implements Serializable{
     @Id 
     private String email;

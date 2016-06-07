@@ -13,16 +13,12 @@ import javax.xml.ws.Endpoint;
  */
 public class PublishWebService
 {
-    //private static final String url = "http://localhost:8080/Auction";
-    //private static final String urlAuction = "http://localhost:8080/Auction/Auction";
-    //private static final String urlRegistration = "http://localhost:8080/Auction/Registration";
-    //private static final String urlAuction = "http://localhost:8080/Auction";
+    private static final String urlAuction = "http://localhost:8080/Auction";
     private static final String urlRegistration = "http://localhost:8080/Registration";
     
     public static void main(String[] args)
     {
-        //Endpoint.publish(urlAuction, new auctionWebService());
-        //Endpoint.publish(urlAuction, new Auction());
+        Endpoint.publish(urlAuction, new Auction());
         Endpoint.publish(urlRegistration, new Registration());
     }
 }

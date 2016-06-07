@@ -6,6 +6,7 @@ import auction.dao.UserDAOCollectionImpl;
 import auction.dao.UserDAO;
 import auction.dao.UserDAOJPAImpl;
 import auction.domain.Category;
+import javax.jws.WebMethod;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -31,6 +32,7 @@ public class RegistrationMgr {
      * e-mailadres (nieuw aangemaakt of reeds bestaand). Als het e-mailadres
      * onjuist is ( het bevat geen '@'-teken) wordt null teruggegeven.
      */
+    @WebMethod
     public User registerUser(String email) {
         if (!email.contains("@")) {
             return null;
@@ -50,6 +52,7 @@ public class RegistrationMgr {
      * @return Het Userobject dat geïdentificeerd wordt door het gegeven
      * e-mailadres of null als zo'n User niet bestaat.
      */
+    @WebMethod
     public User getUser(String email) {
         return userDAO.findByEmail(email);
     }
@@ -60,7 +63,7 @@ public class RegistrationMgr {
     public List<User> getUsers() {
         return userDAO.findAll();
     }
-    
+    @WebMethod
     public Category createCategory(String description)
     {
         Category category = null;

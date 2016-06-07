@@ -1,6 +1,7 @@
 package auction.domain;
 
 import java.io.Serializable;
+import javax.jws.WebMethod;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import nl.fontys.util.Money;
 import org.eclipse.persistence.annotations.CascadeOnDelete;
 
@@ -22,19 +25,24 @@ import org.eclipse.persistence.annotations.CascadeOnDelete;
     @NamedQuery(name = "Item.findByDescription", query = "select a from Item as a where a.description = :description"),
     @NamedQuery(name = "Item.findWithUserAndCatAndDesc", query = "select a from Item as a where a.seller = :seller AND a.category = :category AND a.description = :description")
 })
+@XmlRootElement
 public class Item implements Comparable, Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
+    @XmlAttribute
     private Long id;
     
     @ManyToOne (cascade = { /*CascadeType.PERSIST,*/CascadeType.MERGE, CascadeType.REMOVE, CascadeType.REFRESH } )
     /*@CascadeOnDelete*/
+    @XmlAttribute
     private User seller;
     @ManyToOne /*(cascade = CascadeType.PERSIST)*/
+    @XmlAttribute
     private Category category;
-    
+    @XmlAttribute
     private String description;
-    @OneToOne (mappedBy = "item", cascade = CascadeType.PERSIST)  
+    @OneToOne (mappedBy = "item", cascade = CascadeType.PERSIST) 
+    @XmlAttribute
     private Bid highest;
 
     public Item()
@@ -47,27 +55,27 @@ public class Item implements Comparable, Serializable{
         this.description = description;
         seller.addItem(this);
     }
-
+    @WebMethod
     public Long getId() {
         return id;
     }
-
+    @WebMethod
     public User getSeller() {
         return seller;
     }
-
+    @WebMethod
     public Category getCategory() {
         return category;
     }
-
+    @WebMethod
     public String getDescription() {
         return description;
     }
-
+    @WebMethod
     public Bid getHighestBid() {
         return highest;
     }
-
+    @WebMethod
     public Bid newBid(User buyer, Money amount) {
         if (highest != null && highest.getAmount().compareTo(amount) >= 0) {
             return null;
@@ -75,14 +83,16 @@ public class Item implements Comparable, Serializable{
         highest = new Bid(buyer, amount, this);
         return highest;
     }
-
+    
     @Override
+    @WebMethod
     public int compareTo(Object arg0) {
         //TODO
         return (int) (highest.getAmount().getCents() - ((Item) arg0).getHighestBid().getAmount().getCents());
     }
     
     @Override
+    @WebMethod
     public boolean equals(Object o) {
 
         if(o == null)
@@ -118,6 +128,7 @@ public class Item implements Comparable, Serializable{
     }
 
     @Override
+    @WebMethod
     public int hashCode()
     {
         long hash = 5;
