@@ -1,12 +1,14 @@
 package auction.domain;
 
 import java.io.Serializable;
+import javax.jws.WebMethod;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -15,8 +17,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Category implements Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
+    @XmlAttribute
     private Long id;
     @Column
+    @XmlAttribute
     private String description = "undefined";
     
     private Category() 
@@ -29,6 +33,7 @@ public class Category implements Serializable{
         this.description = description;
     }
 
+    @WebMethod
     public String getDiscription() {
         return description;
     }
