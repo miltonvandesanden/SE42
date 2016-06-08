@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://web.auction/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://web.auction/">
 
+<xs:element name="bid" type="tns:bid"></xs:element>
+
 <xs:element name="category" type="tns:category"></xs:element>
 
 <xs:element name="createCategory" type="tns:createCategory"></xs:element>
 
 <xs:element name="createCategoryResponse" type="tns:createCategoryResponse"></xs:element>
 
+<xs:element name="fontysTime" type="tns:fontysTime"></xs:element>
+
 <xs:element name="getUser" type="tns:getUser"></xs:element>
 
 <xs:element name="getUserResponse" type="tns:getUserResponse"></xs:element>
+
+<xs:element name="getUsers" type="tns:getUsers"></xs:element>
+
+<xs:element name="getUsersResponse" type="tns:getUsersResponse"></xs:element>
+
+<xs:element name="item" type="tns:item"></xs:element>
+
+<xs:element name="money" type="tns:money"></xs:element>
+
+<xs:element name="numberOfOfferedItems" type="tns:numberOfOfferedItems"></xs:element>
+
+<xs:element name="numberOfOfferedItemsResponse" type="tns:numberOfOfferedItemsResponse"></xs:element>
 
 <xs:element name="registerUser" type="tns:registerUser"></xs:element>
 
@@ -29,7 +45,72 @@
 </xs:complexType>
 
 <xs:complexType name="user">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="offeredItems" type="tns:item" nillable="true" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="item">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="seller" type="tns:user" minOccurs="0"></xs:element>
+<xs:element name="category" type="tns:category" minOccurs="0"></xs:element>
+<xs:element name="description" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="highest" type="tns:bid" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="category">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="description" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bid">
+<xs:sequence>
+<xs:element name="id" type="xs:long" minOccurs="0"></xs:element>
+<xs:element name="time" type="tns:fontysTime" minOccurs="0"></xs:element>
+<xs:element name="buyer" type="tns:user" minOccurs="0"></xs:element>
+<xs:element name="amount" type="tns:money" minOccurs="0"></xs:element>
+<xs:element name="item" type="tns:item" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fontysTime">
+<xs:sequence>
+<xs:element name="seconds" type="xs:long"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="money">
+<xs:sequence>
+<xs:element name="currency" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="cents" type="xs:long"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="numberOfOfferedItems">
+<xs:sequence>
+<xs:element name="arg0" type="tns:user" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="numberOfOfferedItemsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsers">
 <xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUsersResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:user" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="registerUser">
@@ -54,9 +135,5 @@
 <xs:sequence>
 <xs:element name="return" type="tns:category" minOccurs="0"></xs:element>
 </xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="category">
-<xs:sequence></xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -83,4 +83,9 @@ public class AuctionMgr  {
         
         return result;
     }
+    
+    public Money createMoney(Long amount, String currency)
+    {
+        return new Money(amount, currency);
+    }
 }

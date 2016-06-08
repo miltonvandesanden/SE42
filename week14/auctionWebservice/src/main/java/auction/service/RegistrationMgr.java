@@ -60,6 +60,7 @@ public class RegistrationMgr {
     /**
      * @return Een iterator over alle geregistreerde gebruikers
      */
+    @WebMethod
     public List<User> getUsers() {
         return userDAO.findAll();
     }

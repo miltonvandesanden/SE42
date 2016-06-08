@@ -36,7 +36,7 @@ public class UserDAOJPAImpl implements UserDAO {
         }
         catch(Exception exception)
         {
-            
+            System.out.println("help");
         }
     }
 

@@ -124,6 +124,29 @@ public class AuctionClient
         }
     }
     
+    public Money createMoney(Long amount, String currency)
+    {
+        
+        try
+        {
+            // Call Web Service Operation
+            auction.web.AuctionService service = new auction.web.AuctionService();
+            auction.web.Auction port = service.getAuctionPort();
+            // TODO initialize WS operation arguments here
+            java.lang.Long arg0 = amount;
+            java.lang.String arg1 = currency;
+            // TODO process result here
+            return port.createMoney(arg0, arg1);
+//            System.out.println("Result = "+result);
+        }
+        catch (Exception ex)
+        {
+            return null;
+            // TODO handle custom exceptions here
+        }
+
+    }
+    
     
     
     

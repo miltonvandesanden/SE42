@@ -8,6 +8,7 @@ package auction.web;
 import auction.domain.Category;
 import auction.domain.User;
 import auction.service.RegistrationMgr;
+import java.util.List;
 import javax.jws.WebService;
 
 /**
@@ -29,8 +30,17 @@ public class Registration
         return registrationMgr.getUser(email);
     }
     
+    public List<User> getUsers() {
+        return registrationMgr.getUsers();
+    }
+    
     public Category createCategory(String description)
     {
         return registrationMgr.createCategory(description);
+    }
+    
+    public int numberOfOfferedItems(User user)
+    {
+        return user.numberOfOfferedItems();
     }
 }

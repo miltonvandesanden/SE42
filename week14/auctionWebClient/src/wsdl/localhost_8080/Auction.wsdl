@@ -16,17 +16,23 @@
 <message name="findItemByDescriptionResponse">
 <part name="parameters" element="tns:findItemByDescriptionResponse"></part>
 </message>
+<message name="newBid">
+<part name="parameters" element="tns:newBid"></part>
+</message>
+<message name="newBidResponse">
+<part name="parameters" element="tns:newBidResponse"></part>
+</message>
 <message name="revokeItem">
 <part name="parameters" element="tns:revokeItem"></part>
 </message>
 <message name="revokeItemResponse">
 <part name="parameters" element="tns:revokeItemResponse"></part>
 </message>
-<message name="newBid">
-<part name="parameters" element="tns:newBid"></part>
+<message name="createMoney">
+<part name="parameters" element="tns:createMoney"></part>
 </message>
-<message name="newBidResponse">
-<part name="parameters" element="tns:newBidResponse"></part>
+<message name="createMoneyResponse">
+<part name="parameters" element="tns:createMoneyResponse"></part>
 </message>
 <message name="offerItem">
 <part name="parameters" element="tns:offerItem"></part>
@@ -43,13 +49,17 @@
 <input wsam:Action="http://web.auction/Auction/findItemByDescriptionRequest" message="tns:findItemByDescription"></input>
 <output wsam:Action="http://web.auction/Auction/findItemByDescriptionResponse" message="tns:findItemByDescriptionResponse"></output>
 </operation>
+<operation name="newBid">
+<input wsam:Action="http://web.auction/Auction/newBidRequest" message="tns:newBid"></input>
+<output wsam:Action="http://web.auction/Auction/newBidResponse" message="tns:newBidResponse"></output>
+</operation>
 <operation name="revokeItem">
 <input wsam:Action="http://web.auction/Auction/revokeItemRequest" message="tns:revokeItem"></input>
 <output wsam:Action="http://web.auction/Auction/revokeItemResponse" message="tns:revokeItemResponse"></output>
 </operation>
-<operation name="newBid">
-<input wsam:Action="http://web.auction/Auction/newBidRequest" message="tns:newBid"></input>
-<output wsam:Action="http://web.auction/Auction/newBidResponse" message="tns:newBidResponse"></output>
+<operation name="createMoney">
+<input wsam:Action="http://web.auction/Auction/createMoneyRequest" message="tns:createMoney"></input>
+<output wsam:Action="http://web.auction/Auction/createMoneyResponse" message="tns:createMoneyResponse"></output>
 </operation>
 <operation name="offerItem">
 <input wsam:Action="http://web.auction/Auction/offerItemRequest" message="tns:offerItem"></input>
@@ -76,6 +86,15 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
+<operation name="newBid">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
 <operation name="revokeItem">
 <soap:operation soapAction=""></soap:operation>
 <input>
@@ -85,7 +104,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="newBid">
+<operation name="createMoney">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

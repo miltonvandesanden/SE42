@@ -14,6 +14,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import nl.fontys.util.Money;
@@ -26,6 +28,7 @@ import org.eclipse.persistence.annotations.CascadeOnDelete;
     @NamedQuery(name = "Item.findWithUserAndCatAndDesc", query = "select a from Item as a where a.seller = :seller AND a.category = :category AND a.description = :description")
 })
 @XmlRootElement
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Item implements Comparable, Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)

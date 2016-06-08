@@ -5,10 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import auction.web.Auction;
+import auction.web.Bid;
 import auction.web.Category;
 import auction.web.Item;
-import auction.web.Registration;
 import auction.web.User;
 import com.mycompany.auctionwebclient.AuctionClient;
 import com.mycompany.auctionwebclient.RegistrationClient;
@@ -53,16 +52,16 @@ public class AuctionMgrTest {
         String email4 = "xx4@nl";
         String omsch2 = "omsch2";
 
-        User seller3 = registrationMgr.registerUser(email3);
-        User seller4 = registrationMgr.registerUser(email4);
-        Category cat = registrationMgr.createCategory("cat3");
-        Item item1 = sellerMgr.offerItem(seller3, cat, omsch);
-        Item item2 = sellerMgr.offerItem(seller4, cat, omsch);
+        User seller3 = registrationClient.registerUser(email3);
+        User seller4 = registrationClient.registerUser(email4);
+        Category cat = registrationClient.createCategory("cat3");
+        Item item1 = auctionClient.offerItem(seller3, cat, omsch);
+        Item item2 = auctionClient.offerItem(seller4, cat, omsch);
 
-        Vector res = (Vector) auctionMgr.findItemByDescription(omsch2);
+        Vector res = (Vector) auctionClient.findItemByDescription(omsch2);
         assertEquals(0, res.size());
 
-        res = (Vector) auctionMgr.findItemByDescription(omsch);
+        res = (Vector) auctionClient.findItemByDescription(omsch);
         assertEquals(2, res.size());
 
     }
@@ -75,22 +74,22 @@ public class AuctionMgrTest {
         String emailb2 = "bb2@nl";
         String omsch = "omsch_bb";
 
-        User seller = registrationMgr.registerUser(email);
-        User buyer = registrationMgr.registerUser(emailb);
-        User buyer2 = registrationMgr.registerUser(emailb2);
+        User seller = registrationClient.registerUser(email);
+        User buyer = registrationClient.registerUser(emailb);
+        User buyer2 = registrationClient.registerUser(emailb2);
         // eerste bod
-        Category cat = registrationMgr.createCategory("cat9");
-        Item item1 = sellerMgr.offerItem(seller, cat, omsch);
+        Category cat = registrationClient.createCategory("cat9");
+        Item item1 = auctionClient.offerItem(seller, cat, omsch);
        
-        Bid new1 = auctionMgr.newBid(item1, buyer, new Money(10L, "eur"));
+        Bid new1 = auctionClient.newBid(item1, buyer, auctionClient.createMoney(10L, "eur"));
         assertEquals(emailb, new1.getBuyer().getEmail());
 
         // lager bod
-        Bid new2 = auctionMgr.newBid(item1, buyer2, new Money(9L, "eur"));
+        Bid new2 = auctionClient.newBid(item1, buyer2, auctionClient.createMoney(9L, "eur"));
         assertNull(new2);
 
         // hoger bod
-        Bid new3 = auctionMgr.newBid(item1, buyer2, new Money(11, "eur"));
+        Bid new3 = auctionClient.newBid(item1, buyer2, auctionClient.createMoney(11L, "eur"));
         assertEquals(emailb2, new3.getBuyer().getEmail());
     }
 }

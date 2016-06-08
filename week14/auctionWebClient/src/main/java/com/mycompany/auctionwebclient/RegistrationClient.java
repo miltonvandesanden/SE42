@@ -6,7 +6,9 @@
 package com.mycompany.auctionwebclient;
 
 import auction.web.Category;
+import auction.web.Item;
 import auction.web.User;
+import java.util.Iterator;
 import javax.xml.ws.WebServiceClient;
 
 /**
@@ -72,6 +74,45 @@ public class RegistrationClient
         catch (Exception ex)
         {
             return null;
+            // TODO handle custom exceptions here
+        }
+    }
+    
+    public Iterator<User> getUsers()
+    {
+        
+        try
+        {
+            // Call Web Service Operation
+            auction.web.RegistrationService service = new auction.web.RegistrationService();
+            auction.web.Registration port = service.getRegistrationPort();
+            // TODO process result here
+            return (Iterator<User>)port.getUsers();
+//            System.out.println("Result = "+result);
+        }
+        catch (Exception ex)
+        {
+            return null;
+            // TODO handle custom exceptions here
+        }
+    }
+    
+    public int numberOfOfferedItems(User user)
+    {
+        try
+        {
+            // Call Web Service Operation
+            auction.web.RegistrationService service = new auction.web.RegistrationService();
+            auction.web.Registration port = service.getRegistrationPort();
+            // TODO initialize WS operation arguments here
+            auction.web.User arg0 = user;
+            // TODO process result here
+            return port.numberOfOfferedItems(arg0);
+//            System.out.println("Result = "+result);
+        }
+        catch (Exception ex)
+        {
+            return 0;
             // TODO handle custom exceptions here
         }
     }

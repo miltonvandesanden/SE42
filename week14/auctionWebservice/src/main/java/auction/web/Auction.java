@@ -49,4 +49,9 @@ public class Auction
     {
         return sellerMgr.revokeItem(item);
     }
+    
+    public Money createMoney(Long amount, String currency)
+    {
+        return auctionMgr.createMoney(amount, currency);
+    }
 }

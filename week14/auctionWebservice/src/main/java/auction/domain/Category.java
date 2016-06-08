@@ -8,12 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table (name="SE42_W12_1_Category")
 @XmlRootElement
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Category implements Serializable{
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)

@@ -2,7 +2,13 @@ package nl.fontys.util;
 
 import java.io.*;
 import java.text.*;
+import javax.jws.WebMethod;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
+@XmlAccessorType (XmlAccessType.FIELD)
 public class Money implements Serializable, Comparable {
 
 	private static final long serialVersionUID = 1L;
@@ -39,6 +45,7 @@ public class Money implements Serializable, Comparable {
 	 * @return de munteenheid gevolgd door een spatie en de waarde in twee
 	 *         decimalen nauwkeurig
 	 */
+        @WebMethod
 	public String toString() {
 
 		return currency + " " + getValue();
@@ -49,10 +56,11 @@ public class Money implements Serializable, Comparable {
 	 * @return <b>true</b> als het Money-object groter dan 0 is, anders
 	 *         <b>false</b>
 	 */
+        @WebMethod
 	public boolean isPositive() {
 		return cents > 0;
 	}
-
+        @WebMethod
 	public String getCurrency() {
 		return currency;
 	}
@@ -61,12 +69,13 @@ public class Money implements Serializable, Comparable {
 	 * 
 	 * @return de waarde in twee decimalen nauwkeurig
 	 */
+        @WebMethod
 	public String getValue() {
 		DecimalFormat df = new DecimalFormat("0.00");
 		return df.format(((double) cents) / 100);
 
 	}
-
+        @WebMethod
 	public long getCents() {
 		return cents;
 	}
@@ -75,6 +84,7 @@ public class Money implements Serializable, Comparable {
 	 * voorwaarde: currency van m1 en m2 moeten gelijk zijn
 	 * @return het verschil tussen m1 en m2
 	 */
+        @WebMethod
 	public static Money difference(Money m1, Money m2) {
 		return new Money(m1.cents-m2.cents, m1.currency);
 	}
@@ -83,20 +93,22 @@ public class Money implements Serializable, Comparable {
 	 * voorwaarde: currency van m1 en m2 moeten gelijk zijn
 	 * @return de som van m1 en m2
 	 */
+        @WebMethod
 	public static Money sum(Money m1, Money m2) {
 		return new Money(m1.cents+m2.cents, m1.currency);
 	}
-
+        @WebMethod
 	public boolean equals(Object o) {
 		if (!(o instanceof Money))
 			return false;
 		Money m = (Money) o;
 		return this.currency.equals(m.currency) && this.cents == m.cents;
 	}
-	
+	@WebMethod
 	public static Money negativeValueOf(Money m) {
 		return new Money (-m.cents,m.currency);
 	}
+        @WebMethod
 	public int compareTo(Object o) {
 		Money m = (Money) o;
 		if (!this.currency.equals(m.currency)) 

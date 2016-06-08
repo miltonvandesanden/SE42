@@ -1,23 +1,20 @@
 package auction.domain;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.TreeSet;
 import javax.jws.WebMethod;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import org.eclipse.persistence.annotations.CascadeOnDelete;
-import org.eclipse.persistence.annotations.PrivateOwned;
 
 @Entity 
 @Table (name = "SE42_W12_1_User")
@@ -26,6 +23,7 @@ import org.eclipse.persistence.annotations.PrivateOwned;
     @NamedQuery(name = "User.findByEmail", query = "select a from User as a where a.email = :email")
 })
 @XmlRootElement
+@XmlAccessorType (XmlAccessType.FIELD)
 public class User implements Serializable{
     @Id 
     private String email;
@@ -43,6 +41,7 @@ public class User implements Serializable{
     
     public User(String email) {
         this.email = email;
+        offeredItems = new TreeSet<>();
         
     }
 
