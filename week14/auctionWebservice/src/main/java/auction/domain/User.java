@@ -36,7 +36,7 @@ public class User implements Serializable{
     
     public User()
     {
-        
+        offeredItems = new TreeSet<>();
     }
     
     public User(String email) {

@@ -10,17 +10,17 @@
 <message name="numberOfOfferedItemsResponse">
 <part name="parameters" element="tns:numberOfOfferedItemsResponse"></part>
 </message>
+<message name="getUser">
+<part name="parameters" element="tns:getUser"></part>
+</message>
+<message name="getUserResponse">
+<part name="parameters" element="tns:getUserResponse"></part>
+</message>
 <message name="registerUser">
 <part name="parameters" element="tns:registerUser"></part>
 </message>
 <message name="registerUserResponse">
 <part name="parameters" element="tns:registerUserResponse"></part>
-</message>
-<message name="getUsers">
-<part name="parameters" element="tns:getUsers"></part>
-</message>
-<message name="getUsersResponse">
-<part name="parameters" element="tns:getUsersResponse"></part>
 </message>
 <message name="createCategory">
 <part name="parameters" element="tns:createCategory"></part>
@@ -28,32 +28,32 @@
 <message name="createCategoryResponse">
 <part name="parameters" element="tns:createCategoryResponse"></part>
 </message>
-<message name="getUser">
-<part name="parameters" element="tns:getUser"></part>
+<message name="getUsers">
+<part name="parameters" element="tns:getUsers"></part>
 </message>
-<message name="getUserResponse">
-<part name="parameters" element="tns:getUserResponse"></part>
+<message name="getUsersResponse">
+<part name="parameters" element="tns:getUsersResponse"></part>
 </message>
 <portType name="Registration">
 <operation name="numberOfOfferedItems">
 <input wsam:Action="http://web.auction/Registration/numberOfOfferedItemsRequest" message="tns:numberOfOfferedItems"></input>
 <output wsam:Action="http://web.auction/Registration/numberOfOfferedItemsResponse" message="tns:numberOfOfferedItemsResponse"></output>
 </operation>
+<operation name="getUser">
+<input wsam:Action="http://web.auction/Registration/getUserRequest" message="tns:getUser"></input>
+<output wsam:Action="http://web.auction/Registration/getUserResponse" message="tns:getUserResponse"></output>
+</operation>
 <operation name="registerUser">
 <input wsam:Action="http://web.auction/Registration/registerUserRequest" message="tns:registerUser"></input>
 <output wsam:Action="http://web.auction/Registration/registerUserResponse" message="tns:registerUserResponse"></output>
-</operation>
-<operation name="getUsers">
-<input wsam:Action="http://web.auction/Registration/getUsersRequest" message="tns:getUsers"></input>
-<output wsam:Action="http://web.auction/Registration/getUsersResponse" message="tns:getUsersResponse"></output>
 </operation>
 <operation name="createCategory">
 <input wsam:Action="http://web.auction/Registration/createCategoryRequest" message="tns:createCategory"></input>
 <output wsam:Action="http://web.auction/Registration/createCategoryResponse" message="tns:createCategoryResponse"></output>
 </operation>
-<operation name="getUser">
-<input wsam:Action="http://web.auction/Registration/getUserRequest" message="tns:getUser"></input>
-<output wsam:Action="http://web.auction/Registration/getUserResponse" message="tns:getUserResponse"></output>
+<operation name="getUsers">
+<input wsam:Action="http://web.auction/Registration/getUsersRequest" message="tns:getUsers"></input>
+<output wsam:Action="http://web.auction/Registration/getUsersResponse" message="tns:getUsersResponse"></output>
 </operation>
 </portType>
 <binding name="RegistrationPortBinding" type="tns:Registration">
@@ -67,7 +67,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="registerUser">
+<operation name="getUser">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -76,7 +76,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="getUsers">
+<operation name="registerUser">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
@@ -94,7 +94,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="getUser">
+<operation name="getUsers">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>
